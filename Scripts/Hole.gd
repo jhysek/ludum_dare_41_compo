@@ -10,4 +10,5 @@ func _ready():
 
 func _on_Hole_body_entered(body):
 	if body.name == "Ball":
+		$SfxHole.play()
 		body.finish()

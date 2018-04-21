@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/switch.wav-50a409a5ccdc3341cc5367a74c5296b4.sample"
+
+[deps]
+
+source_file="res://Audio/switch.wav"
+source_md5="cb420e9fdf53745b267b2a23fa283328"
+
+dest_files=[ "res://.import/switch.wav-50a409a5ccdc3341cc5367a74c5296b4.sample" ]
+dest_md5="aa04aa77bf64eff6a37183c56053ec5c"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

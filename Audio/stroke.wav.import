@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stroke.wav-1b4941f0128d2935dee4fecd3c2de100.sample"
+
+[deps]
+
+source_file="res://Audio/stroke.wav"
+source_md5="438d0286d2eb60a05152af7b6e62d803"
+
+dest_files=[ "res://.import/stroke.wav-1b4941f0128d2935dee4fecd3c2de100.sample" ]
+dest_md5="5a167034cf8744f36b2b2ea69b95ffea"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

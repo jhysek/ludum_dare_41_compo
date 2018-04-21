@@ -20,6 +20,7 @@ func _input(event):
 		apply_impulse(Vector2(0,0), Vector2($Line.get_point_position(1) * -2))
 		aiming = false
 		game.add_stroke()
+		$SfxStroke.play()
 		$Line.hide()
 
 
@@ -36,3 +37,5 @@ func finish():
 	set_linear_velocity(Vector2(0,0))
 	game.finished()
 
+func dropped():
+	$SfxDrop.play()

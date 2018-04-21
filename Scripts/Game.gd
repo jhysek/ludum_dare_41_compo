@@ -19,5 +19,8 @@ func add_stroke():
 	$CanvasLayer/UI/Strokes.text = "Strokes: " + str(strokes)
 
 func finished():
+	$CanvasLayer/UI/AnimationPlayer.play("Finished")
+
+func to_next_level():
 	if hole < total_holes:
 		get_tree().change_scene("res://Levels/Level" + str(hole + 1) + ".tscn")

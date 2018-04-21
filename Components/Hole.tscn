@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Hole.gd" type="Script" id=1]
 [ext_resource path="res://Assets/hole.png" type="Texture" id=2]
+[ext_resource path="res://Audio/hole.wav" type="AudioStream" id=3]
 
 [node name="Hole" type="Area2D"]
 
@@ -27,6 +28,14 @@ _sections_unfolded = [ "Transform" ]
 
 build_mode = 0
 polygon = PoolVector2Array( -0.902126, -13.3418, -19.1098, -7.41371, -26.3081, 5.2893, -22.0738, 19.6861, -9.79423, 25.1907, 8.41343, 27.7313, 21.9633, 18.8392, 27.4679, 6.13617, 21.9633, -3.6028, 11.8009, -10.8012 )
+
+[node name="SfxHole" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 3 )
+volume_db = -20.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="." to="." method="_on_Hole_body_entered"]
 

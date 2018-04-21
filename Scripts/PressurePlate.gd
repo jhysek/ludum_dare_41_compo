@@ -11,16 +11,19 @@ func _ready():
 		doors =  get_node("/root/Level/" + trigger_node)
 
 func switch_on():
-	$Sprite.region_rect = Rect2(113, 0, 112, 113)
-	activated = true
-	if doors:
-		doors.open()
+	if not activated:
+		activated = true
+		$Sprite.region_rect = Rect2(113, 0, 112, 113)
+		$SfxTrigger.play()
+		if doors:
+			doors.open()
 
 func switch_off():
-	$Sprite.region_rect = Rect2(0, 0, 112, 113)
-	activated = false
-	if doors:
-		doors.close()
+	if activated:
+		activated = false
+		$Sprite.region_rect = Rect2(0, 0, 112, 113)
+		if doors:
+			doors.close()
 
 func _on_PressurePlate_body_entered(body):
 	if body.name == "Ball":
@@ -30,12 +33,15 @@ func _on_PressurePlate_body_entered(body):
 		else:
 			if activated:
 				switch_off()
+				$SfxTrigger.play()
 			else:
 				switch_on()
 
 func _on_PressurePlate_body_exited(body):
 	if body.name == "Ball":
+		$SfxTrigger.play()
 		if not is_switch:
+			$Sprite.region_rect = Rect2(0, 0, 112, 113)
 			$Timer.start()
 
 func _on_Timer_timeout():
