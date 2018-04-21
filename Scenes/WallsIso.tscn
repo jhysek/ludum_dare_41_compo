@@ -1,0 +1,157 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/tile_grass_iso.png" type="Texture" id=1]
+[ext_resource path="res://Assets/tile_asphalt_iso.png" type="Texture" id=2]
+[ext_resource path="res://Assets/tile_yellow.png" type="Texture" id=3]
+[ext_resource path="res://Assets/tile_blue.png" type="Texture" id=4]
+[ext_resource path="res://Assets/tile_green_iso.png" type="Texture" id=5]
+[ext_resource path="res://Assets/tile_gray_polka.png" type="Texture" id=6]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -55.6643, 9.8716, -0.513077, 64.6715, 54.6381, 9.52032, 54.9894, -10.1514, -0.513077, -62.8436, -54.9617, -9.0976 )
+
+[node name="Floors" type="Node2D"]
+
+[node name="Grass" type="Sprite" parent="." index="0"]
+
+editor/display_folded = true
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Grass" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Grass/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0.0516815, 57.2829, 54.5602, 3.77145, 0.0516815, -50.0723, -55.1216, 3.77145, 0.0516815, 57.2829 )
+
+[node name="Asphalt" type="Sprite" parent="." index="1"]
+
+position = Vector2( 111, 0 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Asphalt" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asphalt/StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0.0516815, 57.2829, 54.5602, 3.77145, 0.0516815, -50.0723, -55.1216, 3.77145, 0.0516815, 57.2829 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Asphalt" index="1"]
+
+occluder = SubResource( 1 )
+light_mask = 1
+
+[node name="Yellow" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 0, 131.001 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Yellow" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Yellow/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0.0516815, 57.2829, 54.5602, 3.77145, 0.0516815, -50.0723, -55.1216, 3.77145, 0.0516815, 57.2829 )
+
+[node name="Blue" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 111, 131.001 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Blue" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blue/StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0.0516815, 57.2829, 54.5602, 3.77145, 0.0516815, -50.0723, -55.1216, 3.77145, 0.0516815, 57.2829 )
+
+[node name="Green" type="Sprite" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( -3.11908, 265.121 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Green" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Green/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0.0516815, 57.2829, 54.5602, 3.77145, 0.0516815, -50.0723, -55.1216, 3.77145, 0.0516815, 57.2829 )
+
+[node name="Gray" type="Sprite" parent="." index="5"]
+
+position = Vector2( 124.256, 267.168 )
+texture = ExtResource( 6 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Gray" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gray/StaticBody2D2" index="0"]
+
+position = Vector2( 0.229858, -3.36929 )
+build_mode = 0
+polygon = PoolVector2Array( 0.0516815, 57.2829, 54.5602, 3.77145, 0.0516815, -50.0723, -55.1216, 3.77145, 0.0516815, 57.2829 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Gray" index="1"]
+
+occluder = SubResource( 1 )
+light_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+

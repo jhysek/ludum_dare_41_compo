@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Hole.gd" type="Script" id=1]
+[ext_resource path="res://Assets/hole.png" type="Texture" id=2]
+
+[node name="Hole" type="Area2D"]
+
+position = Vector2( -55.1339, -63.7824 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( -0.143062, 6.61399 )
+rotation = 0.0216269
+scale = Vector2( 0.4, 0.574093 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -0.902126, -13.3418, -19.1098, -7.41371, -26.3081, 5.2893, -22.0738, 19.6861, -9.79423, 25.1907, 8.41343, 27.7313, 21.9633, 18.8392, 27.4679, 6.13617, 21.9633, -3.6028, 11.8009, -10.8012 )
+
+[connection signal="body_entered" from="." to="." method="_on_Hole_body_entered"]
+
+
