@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Assets/floors_iso.tres" type="TileSet" id=1]
-[ext_resource path="res://Assets/walls_iso.tres" type="TileSet" id=2]
-[ext_resource path="res://Components/Hole.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://Assets/floors_iso.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/walls_iso.tres" type="TileSet" id=3]
 [ext_resource path="res://Scripts/PressurePlate.gd" type="Script" id=4]
 [ext_resource path="res://Assets/pressure_plate.png" type="Texture" id=5]
-[ext_resource path="res://Components/Doors.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Components/Ball.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/flag.png" type="Texture" id=8]
+[ext_resource path="res://Components/Hole.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Components/Doors.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Components/Ball.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/flag.png" type="Texture" id=9]
+[ext_resource path="res://Components/UI.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Environment" id=1]
 
@@ -90,10 +92,12 @@ _sections_unfolded = [ "Adjustments", "Background", "Glow" ]
 
 [node name="Level" type="Node2D" index="0"]
 
+script = ExtResource( 1 )
+
 [node name="Floors" type="TileMap" parent="." index="0"]
 
 mode = 1
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 110, 110 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -108,14 +112,14 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -1769464, 10, 0, -1769463, 10, 0, -1769462, 10, 0, -1769461, 10, 0, -1769460, 10, 0, -1769459, 10, 0, -1703928, 10, 0, -1703927, 8, 0, -1703926, 8, 0, -1703925, 8, 0, -1703924, 8, 0, -1703923, 10, 0, -1703922, 11, 0, -1638392, 10, 0, -1638391, 8, 0, -1638390, 8, 0, -1638389, 8, 0, -1638388, 8, 0, -1638387, 10, 0, -1638386, 11, 0, -1638385, 11, 0, -1572856, 10, 0, -1572855, 8, 0, -1572854, 8, 0, -1572853, 8, 0, -1572852, 8, 0, -1572851, 10, 0, -1572850, 11, 0, -1572849, 11, 0, -1507320, 10, 0, -1507319, 10, 0, -1507318, 10, 0, -1507317, 10, 0, -1507316, 10, 0, -1507315, 10, 0, -1507314, 11, 0, -1507313, 11, 0, -1441785, 11, 0, -1441784, 10, 0, -1441783, 8, 0, -1441782, 8, 0, -1441781, 8, 0, -1441780, 8, 0, -1441779, 10, 0, -1441778, 11, 0, -1441777, 11, 0, -1376249, 11, 0, -1376248, 10, 0, -1376247, 8, 0, -1376246, 8, 0, -1376245, 8, 0, -1376244, 8, 0, -1376243, 10, 0, -1376242, 11, 0, -1376241, 11, 0, -1310713, 11, 0, -1310712, 10, 0, -1310711, 8, 0, -1310710, 8, 0, -1310709, 8, 0, -1310708, 8, 0, -1310707, 10, 0, -1310706, 11, 0, -1310705, 11, 0, -1245177, 11, 0, -1245176, 10, 0, -1245175, 10, 0, -1245174, 10, 0, -1245173, 10, 0, -1245172, 10, 0, -1245171, 10, 0, -1245170, 11, 0, -1245169, 11, 0, -1179640, 10, 0, -1179639, 8, 0, -1179638, 8, 0, -1179637, 8, 0, -1179636, 8, 0, -1179635, 10, 0, -1179634, 11, 0, -1179633, 11, 0, -1114104, 10, 0, -1114103, 8, 0, -1114102, 8, 0, -1114101, 8, 0, -1114100, 8, 0, -1114099, 10, 0, -1114098, 11, 0, -1114097, 11, 0, -1048568, 10, 0, -1048567, 8, 0, -1048566, 8, 0, -1048565, 8, 0, -1048564, 8, 0, -1048563, 10, 0, -983032, 10, 0, -983031, 10, 0, -983030, 10, 0, -983029, 10, 0, -983028, 10, 0, -983027, 10, 0, -131082, 10, 0, -131081, 10, 0, -131080, 10, 0, -131079, 10, 0, -131078, 10, 0, -131077, 10, 0, -131076, 10, 0, -131075, 10, 0, -131074, 10, 0, -131073, 10, 0, -196608, 10, 0, -196607, 10, 0, -196606, 4, 0, -65546, 10, 0, -65545, 10, 0, -65544, 10, 0, -65543, 10, 0, -65542, 10, 0, -65541, 10, 0, -65540, 10, 0, -65539, 10, 0, -65538, 10, 0, -65537, 10, 0, -131072, 10, 0, -131071, 10, 0, -131070, 4, 0, -10, 10, 0, -9, 10, 0, -8, 10, 0, -7, 10, 0, -6, 10, 0, -5, 10, 0, -4, 10, 0, -3, 10, 0, -2, 10, 0, -1, 10, 0, -65536, 10, 0, -65535, 10, 0, -65534, 4, 0, 65526, 10, 0, 65527, 10, 0, 65528, 10, 0, 65529, 10, 0, 65530, 10, 0, 65531, 10, 0, 65532, 10, 0, 65533, 10, 0, 65534, 10, 0, 65535, 10, 0, 0, 10, 0, 1, 10, 0, 2, 4, 0, 131062, 4, 0, 131063, 4, 0, 131064, 4, 0, 131065, 4, 0, 131066, 4, 0, 131067, 4, 0, 131068, 4, 0, 131069, 4, 0, 131070, 4, 0, 131071, 4, 0, 65536, 4, 0, 65537, 4, 0, 65538, 4, 0, 196607, 11, 0, 131072, 12, 0, 131073, 5, 0, 262143, 11, 0, 196608, 12, 0, 196609, 5, 0, 327678, 12, 0, 327679, 12, 0, 262144, 12, 0, 262145, 12, 0, 262146, 5, 0, 393214, 12, 0, 393215, 8, 0, 327680, 8, 0, 327681, 8, 0, 327682, 5, 0, 458750, 12, 0, 458751, 8, 0, 393216, 8, 0, 393217, 8, 0, 393218, 2, 0, 524286, 12, 0, 524287, 8, 0, 458752, 8, 0, 458753, 8, 0, 458754, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0 )
+tile_data = PoolIntArray( -131082, 8, 0, -131080, 8, 0, -131079, 8, 0, -131077, 8, 0, -131076, 8, 0, -131075, 8, 0, -131074, 8, 0, -131073, 8, 0, -196608, 8, 0, -196607, 8, 0, -196606, 2, 0, -65545, 11, 0, -65544, 11, 0, -65543, 11, 0, -65542, 8, 0, -65541, 8, 0, -65540, 8, 0, -65539, 8, 0, -65538, 8, 0, -65537, 8, 0, -131072, 8, 0, -131071, 8, 0, -131070, 2, 0, -10, 8, 0, -9, 11, 0, -8, 11, 0, -7, 11, 0, -6, 11, 0, -5, 11, 0, -4, 11, 0, -3, 11, 0, -2, 11, 0, -1, 11, 0, -65536, 11, 0, -65535, 8, 0, -65534, 2, 0, 65526, 8, 0, 65527, 11, 0, 65528, 11, 0, 65529, 11, 0, 65530, 8, 0, 65531, 8, 0, 65532, 8, 0, 65533, 8, 0, 65534, 8, 0, 65535, 8, 0, 0, 11, 0, 1, 8, 0, 2, 2, 0, 131062, 2, 0, 131063, 2, 0, 131064, 2, 0, 131065, 2, 0, 131066, 2, 0, 131067, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 4, 0, 131071, 8, 0, 65536, 11, 0, 65537, 8, 0, 65538, 2, 0, 196606, 8, 0, 196607, 11, 0, 131072, 11, 0, 131073, 5, 0, 131074, 2, 0, 262142, 8, 0, 262143, 11, 0, 196608, 11, 0, 196609, 5, 0, 196610, 2, 0, 327678, 8, 0, 327679, 11, 0, 262144, 11, 0, 262145, 11, 0, 262146, 2, 0, 393214, 12, 0, 393215, 11, 0, 327680, 11, 0, 327681, 11, 0, 327682, 2, 0, 458750, 12, 0, 458751, 11, 0, 393216, 11, 0, 393217, 11, 0, 393218, 2, 0, 524286, 12, 0, 524287, 11, 0, 458752, 11, 0, 458753, 11, 0, 458754, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0 )
 _sections_unfolded = [ "Cell" ]
 
 [node name="Walls" type="TileMap" parent="." index="1"]
 
 position = Vector2( 0, -18 )
 mode = 1
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 110, 109 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -130,16 +134,13 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -1441785, 2, 0, -1376249, 2, 0, -1310713, 2, 0, -1245177, 2, 0, -131082, 5, 0, -131081, 5, 0, -131080, 5, 0, -131079, 5, 0, -131078, 5, 0, -131077, 5, 0, -131076, 5, 0, -131075, 5, 0, -131074, 5, 0, -131073, 5, 0, -196608, 5, 0, -196607, 5, 0, -196606, 5, 0, -65546, 5, 0, -131070, 5, 0, -10, 5, 0, -65534, 5, 0, 65526, 5, 0, 2, 5, 0, 131062, 5, 0, 131063, 5, 0, 131064, 5, 0, 131065, 5, 0, 131066, 5, 0, 131067, 5, 0, 131068, 5, 0, 131069, 5, 0, 131070, 5, 0, 131071, 5, 0, 65537, 5, 0, 65538, 5, 0, 196607, 5, 0, 131073, 5, 0, 262143, 5, 0, 196609, 5, 0, 327678, 5, 0, 327679, 5, 0, 262145, 5, 0, 262146, 5, 0, 393214, 5, 0, 393215, 7, 0, 327682, 5, 0, 458750, 5, 0, 393218, 5, 0, 524286, 5, 0, 458754, 5, 0, 589822, 5, 0, 589823, 5, 0, 524288, 5, 0, 524289, 5, 0, 524290, 5, 0 )
+tile_data = PoolIntArray( -131082, 9, 0, -131081, 5, 0, -131080, 5, 0, -131079, 5, 0, -131078, 5, 0, -131077, 5, 0, -131076, 5, 0, -131075, 5, 0, -131074, 5, 0, -131073, 5, 0, -196608, 5, 0, -196607, 5, 0, -196606, 5, 0, -65546, 5, 0, -131072, 10, 0, -131071, 5, 0, -131070, 5, 0, -10, 5, 0, -65535, 10, 0, -65534, 5, 0, 65526, 5, 0, 2, 5, 0, 131062, 10, 0, 131063, 5, 0, 131064, 5, 0, 131065, 5, 0, 131066, 5, 0, 131067, 5, 0, 131068, 5, 0, 131069, 5, 0, 131070, 5, 0, 131071, 11, 0, 65537, 9, 0, 65538, 7, 0, 196607, 5, 0, 131073, 5, 0, 262143, 5, 0, 196609, 5, 0, 327678, 9, 0, 327679, 8, 0, 262145, 10, 0, 262146, 11, 0, 393214, 5, 0, 327682, 5, 0, 458750, 5, 0, 393218, 5, 0, 524286, 5, 0, 458754, 5, 0, 589822, 5, 0, 589823, 5, 0, 524288, 5, 0, 524289, 5, 0, 524290, 5, 0 )
 _sections_unfolded = [ "Cell", "Occluder" ]
 
-[node name="Hole" parent="." index="2" instance=ExtResource( 3 )]
+[node name="PressurePlate" type="Area2D" parent="." index="2"]
 
-position = Vector2( -386.604, -448.217 )
-
-[node name="PressurePlate" type="Area2D" parent="." index="3"]
-
-position = Vector2( -221.458, 110.929 )
+editor/display_folded = true
+position = Vector2( -226.806, 107.72 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -181,36 +182,39 @@ sharp_limit = 2.0
 round_precision = 8
 _sections_unfolded = [ "Visibility" ]
 
+[node name="Hole" parent="." index="3" instance=ExtResource( 6 )]
+
+position = Vector2( -386.604, -448.217 )
+
 [node name="Doors" parent="." index="4" groups=[
 "Door",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 7 )]
 
 editor/display_folded = true
 
 [node name="Doors2" parent="Doors" index="2" groups=[
 "Door",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 7 )]
 
 position = Vector2( -54.5148, 54.2217 )
 
 [node name="Doors3" parent="Doors" index="3" groups=[
 "Door",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 7 )]
 
 show_behind_parent = true
 position = Vector2( 56.3528, -56.0699 )
 _sections_unfolded = [ "Region", "Visibility" ]
 
-[node name="Ball" parent="." index="5" instance=ExtResource( 7 )]
+[node name="Ball" parent="." index="5" instance=ExtResource( 8 )]
 
 position = Vector2( -354.209, 366.839 )
-_sections_unfolded = [ "Applied Forces", "Collision", "Linear", "Transform" ]
 
 [node name="Cover" type="TileMap" parent="." index="6"]
 
 position = Vector2( 0, -18 )
 mode = 1
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 110, 108 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -225,20 +229,19 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 131068, 5, 0, 131069, 5, 0, 131070, 5, 0, 131071, 5, 0, 65537, 5, 0, 65538, 5, 0, 196607, 5, 0, 262143, 5, 0 )
+tile_data = PoolIntArray( 131068, 12, 0, 131069, 12, 0, 131070, 12, 0 )
 _sections_unfolded = [ "Cell" ]
 
 [node name="Flag" type="Sprite" parent="." index="7"]
 
 position = Vector2( -337.092, -515.018 )
 scale = Vector2( 0.409988, 0.471427 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="8"]
 
-visible = false
-color = Color( 0.628906, 0.628906, 0.628906, 1 )
+color = Color( 0.542969, 0.542969, 0.542969, 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="9"]
 
@@ -250,14 +253,13 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Label" type="Label" parent="CanvasLayer" index="0"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 13.0
-margin_top = 11.0
-margin_right = 53.0
-margin_bottom = 25.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -14.0
+margin_right = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -267,6 +269,8 @@ size_flags_vertical = 4
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="UI" parent="CanvasLayer" index="1" instance=ExtResource( 10 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="10"]
 

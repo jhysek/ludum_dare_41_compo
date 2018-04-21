@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/tile_grass_iso.png" type="Texture" id=1]
 [ext_resource path="res://Assets/tile_asphalt_iso.png" type="Texture" id=2]
@@ -7,7 +7,10 @@
 [ext_resource path="res://Assets/tile_green_iso.png" type="Texture" id=5]
 [ext_resource path="res://Assets/tile_gray_polka.png" type="Texture" id=6]
 [ext_resource path="res://Assets/tile_gray_half.png" type="Texture" id=7]
-[ext_resource path="res://Assets/tile_gray2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/tile_flat_bottomhalf.png" type="Texture" id=8]
+[ext_resource path="res://Assets/tile_flat_righthalf.png" type="Texture" id=9]
+[ext_resource path="res://Assets/tile_flat_lefthalf.png" type="Texture" id=10]
+[ext_resource path="res://Assets/tile_gray2.png" type="Texture" id=11]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 
@@ -20,6 +23,24 @@ polygon = PoolVector2Array( -55.6643, 9.8716, -0.513077, 64.6715, 54.6381, 9.520
 closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 0.0909576, -61.8082, -54.3631, -7.95578, -54.664, 9.79443, 54.545, 10.0953, 54.545, -8.5575 )
+
+[sub_resource type="OccluderPolygon2D" id=15]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -54.7468, -9.01978, 55.718, -9.01978, 55.718, 8.11603, 0.0266266, 63.5015, -54.7468, 8.42206 )
+
+[sub_resource type="OccluderPolygon2D" id=11]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -0.0963745, -59.844, 0.0263672, 64.2682, 54.7998, 12.2488, 54.4938, -6.11099 )
+
+[sub_resource type="OccluderPolygon2D" id=12]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( 0.123611, -61.4844, -0.182388, 64.2802, -54.0378, 9.81284, -54.9558, -6.405 )
 
 [node name="Floors" type="Node2D"]
 
@@ -188,12 +209,13 @@ occluder = SubResource( 1 )
 light_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="Gray3" type="Sprite" parent="." index="6"]
+[node name="TopHalf" type="Sprite" parent="." index="6"]
 
+editor/display_folded = true
 position = Vector2( 124.256, 412.717 )
 texture = ExtResource( 7 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Gray3" index="0"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="TopHalf" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -204,23 +226,109 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gray3/StaticBody2D2" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopHalf/StaticBody2D2" index="0"]
 
 position = Vector2( 0.229858, -3.36929 )
 build_mode = 0
 polygon = PoolVector2Array( 54.5602, 3.77145, 0.0516815, -50.0723, -55.1216, 3.77145 )
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Gray3" index="1"]
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="TopHalf" index="1"]
 
 occluder = SubResource( 9 )
 light_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="Gray2" type="Sprite" parent="." index="7"]
+[node name="BottomHalf" type="Sprite" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 127.022, 524.739 )
+texture = ExtResource( 8 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="BottomHalf" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BottomHalf/StaticBody2D2" index="0"]
+
+position = Vector2( 0.229858, -3.36929 )
+build_mode = 0
+polygon = PoolVector2Array( 54.5602, 3.77145, -0.826599, 58.8629, -55.1216, 3.77145 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="BottomHalf" index="1"]
+
+occluder = SubResource( 15 )
+light_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RightHalf" type="Sprite" parent="." index="8"]
+
+position = Vector2( 261.172, 474.952 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="RightHalf" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightHalf/StaticBody2D2" index="0"]
+
+position = Vector2( 0.229858, -3.36929 )
+build_mode = 0
+polygon = PoolVector2Array( 54.5602, 3.77145, 0.0516815, -50.0723, -0.265045, 60.0488 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="RightHalf" index="1"]
+
+occluder = SubResource( 11 )
+light_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="LeftHalf" type="Sprite" parent="." index="9"]
+
+editor/display_folded = true
+position = Vector2( -29.2554, 472.186 )
+texture = ExtResource( 10 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="LeftHalf" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftHalf/StaticBody2D2" index="0"]
+
+position = Vector2( 0.229858, -3.36929 )
+build_mode = 0
+polygon = PoolVector2Array( -0.902199, 58.3472, 0.0516815, -50.0723, -55.1216, 3.77145 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="LeftHalf" index="1"]
+
+occluder = SubResource( 12 )
+light_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="Gray2" type="Sprite" parent="." index="10"]
 
 editor/display_folded = true
 position = Vector2( 253.938, 270.219 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Gray2" index="0"]
 
