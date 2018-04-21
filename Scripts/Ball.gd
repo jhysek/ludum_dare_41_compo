@@ -34,4 +34,5 @@ func _on_Handle_input_event(viewport, event, shape_idx):
 func finish():
 	hide()
 	set_linear_velocity(Vector2(0,0))
+	game.finished()
 

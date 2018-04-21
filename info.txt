@@ -1,0 +1,4 @@
+- trap
+- pressure plate
+- door keeper
+
