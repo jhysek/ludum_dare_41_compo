@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_flat_gray.png-5690e138ac718929b5a8ea4f3257340c.stex"
+path="res://.import/tile_gray2.png-b4ed0613edb03f67c247ffdd6d8eb74a.stex"
 
 [deps]
 
-source_file="res://Assets/tile_flat_gray.png"
-source_md5="83d4c4ff4c4f1eb405939f38f10eb257"
+source_file="res://Assets/tile_gray2.png"
+source_md5="f3f0bc10450b6a6696edeee1dc190aee"
 
-dest_files=[ "res://.import/tile_flat_gray.png-5690e138ac718929b5a8ea4f3257340c.stex" ]
-dest_md5="509e9f1716593cd675396c2339d4f7a2"
+dest_files=[ "res://.import/tile_gray2.png-b4ed0613edb03f67c247ffdd6d8eb74a.stex" ]
+dest_md5="db5c24265af1b4e526a5ecb5b3f89b76"
 
 [params]
 

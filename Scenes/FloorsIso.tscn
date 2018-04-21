@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/tile_grass_iso.png" type="Texture" id=1]
 [ext_resource path="res://Assets/tile_asphalt_iso.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/tile_flat_yellow.png" type="Texture" id=7]
 [ext_resource path="res://Assets/tile_flat_blue.png" type="Texture" id=8]
 [ext_resource path="res://Assets/tile_flat_green.png" type="Texture" id=9]
+[ext_resource path="res://Assets/tile_flat_gray2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/tile_flat_gray.png" type="Texture" id=11]
 
 [node name="Floors" type="Node2D"]
 
@@ -69,6 +71,11 @@ texture = ExtResource( 9 )
 [node name="GrayFlat" type="Sprite" parent="." index="11"]
 
 position = Vector2( 365.087, 274.203 )
-texture = ExtResource( 6 )
+texture = ExtResource( 10 )
+
+[node name="GrayFlat2" type="Sprite" parent="." index="12"]
+
+position = Vector2( 488.979, 275.635 )
+texture = ExtResource( 11 )
 
 
