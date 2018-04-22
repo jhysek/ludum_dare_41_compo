@@ -89,7 +89,7 @@ adjustment_contrast = 1.2
 adjustment_saturation = 0.7
 _sections_unfolded = [ "Adjustments", "Background", "Glow" ]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 hole = 1
