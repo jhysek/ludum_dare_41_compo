@@ -14,17 +14,16 @@ func _input(event):
 		$Line.set_point_position(1, get_global_mouse_position() - position)
 
 	if (event is InputEventMouseButton && !event.pressed && aiming):
-		print("released")
 		apply_impulse(Vector2(0,0), Vector2($Line.get_point_position(1) * -2))
 		aiming = false
 		game.add_stroke()
 		$SfxStroke.play()
 		$Line.hide()
 
-	if (Input.is_action_just_pressed("ui_accept")):
+	if (Input.is_action_just_pressed("ui_focus_next")):
 		$AnimationPlayer.play("ZoomOut")
 
-	if (Input.is_action_just_released("ui_accept")):
+	if (Input.is_action_just_released("ui_focus_next")):
 		$AnimationPlayer.play_backwards("ZoomOut")
 
 

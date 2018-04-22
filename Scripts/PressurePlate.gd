@@ -37,7 +37,6 @@ func switch_off():
 
 func _on_PressurePlate_body_entered(body):
 	if body.name == "Ball":
-		print(type + "_" + color + ": body entered")
 		if not is_switch:
 			switch_on()
 			$Timer.stop()
@@ -50,7 +49,6 @@ func _on_PressurePlate_body_entered(body):
 
 func _on_PressurePlate_body_exited(body):
 	if body.name == "Ball":
-		print(type + "_" + color + ": body exited")
 		$SfxTrigger.play()
 		if not is_switch:
 			$Sprite.region_rect = Rect2(0, 0, 112, 113)
