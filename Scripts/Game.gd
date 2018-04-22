@@ -2,7 +2,7 @@ extends Node2D
 
 var strokes = 0
 export var hole = 1
-var pars = [2, 3, 5, 4, 5]
+var pars = [2, 3, 5, 6, 5, 8]
 var total_holes = 5
 
 func _ready():
