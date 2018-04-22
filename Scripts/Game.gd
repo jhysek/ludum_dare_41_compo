@@ -20,7 +20,6 @@ func add_stroke():
 
 func finished():
 	Stats.strokes[hole - 1] = strokes
-	print(str(Stats.strokes))
 	$CanvasLayer/UI.update_stats()
 	$CanvasLayer/UI/AnimationPlayer.play("Finished")
 
