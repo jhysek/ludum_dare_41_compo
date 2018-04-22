@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/floors_iso.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Components/Ball.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/flag.png" type="Texture" id=8]
 [ext_resource path="res://Components/UI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Components/LevelName.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Environment" id=1]
 
@@ -235,8 +236,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="15"]
 
-visible = false
-color = Color( 0.542969, 0.542969, 0.542969, 1 )
+color = Color( 0.71875, 0.690674, 0.690674, 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="16"]
 
@@ -270,5 +270,14 @@ max_lines_visible = -1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="17"]
 
 environment = SubResource( 1 )
+
+[node name="Title" parent="." index="18" instance=ExtResource( 10 )]
+
+margin_left = -310.0
+margin_top = -121.0
+margin_right = -27.0
+margin_bottom = -68.0
+custom_colors/font_color = Color( 0.411682, 0.649233, 0.742188, 1 )
+text = "Locked"
 
 
