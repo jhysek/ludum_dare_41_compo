@@ -2,8 +2,8 @@ extends Node2D
 
 var strokes = 0
 export var hole = 1
-var pars = [2, 4]
-var total_holes = 2
+var pars = [2, 5, 4, 5]
+var total_holes = 4
 
 func _ready():
 	$CanvasLayer/UI/Hole.text = "Hole: " + str(hole)
@@ -11,7 +11,7 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_key_pressed(KEY_R):
 		get_tree().change_scene("res://Levels/Level" + str(hole) + ".tscn")
 
 func add_stroke():

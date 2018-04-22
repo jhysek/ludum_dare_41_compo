@@ -1,22 +1,32 @@
 extends Area2D
 
-var activated = false
+export var activated = false
 export var trigger_node = ""
 export var is_switch = false
+export var color = "red"
+var type = "button"
 
 var doors
 
 func _ready():
+	if is_switch:
+		type = "switch"
+
+	$Sprite.texture = load("res://Assets/" + type + "_" + color + ".png")
 	if trigger_node != "":
 		doors =  get_node("/root/Level/" + trigger_node)
+	if activated:
+		$Sprite.region_rect = Rect2(113, 0, 112, 113)
+		if doors:
+			doors.open_silently()
+
 
 func switch_on():
-	if not activated:
-		activated = true
-		$Sprite.region_rect = Rect2(113, 0, 112, 113)
-		$SfxTrigger.play()
-		if doors:
-			doors.open()
+	activated = true
+	$Sprite.region_rect = Rect2(113, 0, 112, 113)
+	$SfxTrigger.play()
+	if doors:
+		doors.open()
 
 func switch_off():
 	if activated:
@@ -27,6 +37,7 @@ func switch_off():
 
 func _on_PressurePlate_body_entered(body):
 	if body.name == "Ball":
+		print(type + "_" + color + ": body entered")
 		if not is_switch:
 			switch_on()
 			$Timer.stop()
@@ -39,6 +50,7 @@ func _on_PressurePlate_body_entered(body):
 
 func _on_PressurePlate_body_exited(body):
 	if body.name == "Ball":
+		print(type + "_" + color + ": body exited")
 		$SfxTrigger.play()
 		if not is_switch:
 			$Sprite.region_rect = Rect2(0, 0, 112, 113)

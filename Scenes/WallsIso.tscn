@@ -18,29 +18,29 @@ closed = true
 cull_mode = 0
 polygon = PoolVector2Array( -55.6643, 9.8716, -0.513077, 64.6715, 54.6381, 9.52032, 54.9894, -10.1514, -0.513077, -62.8436, -54.9617, -9.0976 )
 
-[sub_resource type="OccluderPolygon2D" id=9]
+[sub_resource type="OccluderPolygon2D" id=2]
 
 closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 0.0909576, -61.8082, -54.3631, -7.95578, -54.664, 9.79443, 54.545, 10.0953, 54.545, -8.5575 )
 
-[sub_resource type="OccluderPolygon2D" id=15]
+[sub_resource type="OccluderPolygon2D" id=3]
 
 closed = true
 cull_mode = 0
 polygon = PoolVector2Array( -54.7468, -9.01978, 55.718, -9.01978, 55.718, 8.11603, 0.0266266, 63.5015, -54.7468, 8.42206 )
 
-[sub_resource type="OccluderPolygon2D" id=11]
+[sub_resource type="OccluderPolygon2D" id=4]
 
 closed = true
 cull_mode = 0
 polygon = PoolVector2Array( -0.0963745, -59.844, 0.0263672, 64.2682, 54.7998, 12.2488, 54.4938, -6.11099 )
 
-[sub_resource type="OccluderPolygon2D" id=12]
+[sub_resource type="OccluderPolygon2D" id=5]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( 0.123611, -61.4844, -0.182388, 64.2802, -54.0378, 9.81284, -54.9558, -6.405 )
+polygon = PoolVector2Array( 0.123611, -61.4844, 2.95366, 64.326, -54.8092, 5.69775, -54.9558, -6.405 )
 
 [node name="Floors" type="Node2D"]
 
@@ -234,7 +234,7 @@ polygon = PoolVector2Array( 54.5602, 3.77145, 0.0516815, -50.0723, -55.1216, 3.7
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="TopHalf" index="1"]
 
-occluder = SubResource( 9 )
+occluder = SubResource( 2 )
 light_mask = 1
 _sections_unfolded = [ "Transform" ]
 
@@ -263,12 +263,13 @@ polygon = PoolVector2Array( 54.5602, 3.77145, -0.826599, 58.8629, -55.1216, 3.77
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="BottomHalf" index="1"]
 
-occluder = SubResource( 15 )
+occluder = SubResource( 3 )
 light_mask = 1
 _sections_unfolded = [ "Transform" ]
 
 [node name="RightHalf" type="Sprite" parent="." index="8"]
 
+editor/display_folded = true
 position = Vector2( 261.172, 474.952 )
 texture = ExtResource( 9 )
 
@@ -291,13 +292,12 @@ polygon = PoolVector2Array( 54.5602, 3.77145, 0.0516815, -50.0723, -0.265045, 60
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="RightHalf" index="1"]
 
-occluder = SubResource( 11 )
+occluder = SubResource( 4 )
 light_mask = 1
 _sections_unfolded = [ "Transform" ]
 
 [node name="LeftHalf" type="Sprite" parent="." index="9"]
 
-editor/display_folded = true
 position = Vector2( -29.2554, 472.186 )
 texture = ExtResource( 10 )
 
@@ -316,11 +316,11 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 0.229858, -3.36929 )
 build_mode = 0
-polygon = PoolVector2Array( -0.902199, 58.3472, 0.0516815, -50.0723, -55.1216, 3.77145 )
+polygon = PoolVector2Array( 1.88069, 65.3779, 0.0516815, -50.0723, -56.0385, 6.5394 )
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="LeftHalf" index="1"]
 
-occluder = SubResource( 12 )
+occluder = SubResource( 5 )
 light_mask = 1
 _sections_unfolded = [ "Transform" ]
 

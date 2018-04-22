@@ -21,11 +21,9 @@ func update_stats():
 		var diffsign = ""
 		if diff > 0:
 			diffsign = "+"
-		if diff < 0:
-			diffsign = "-"
 
 		strokes += str(stroke) + "\n"
-		plusminus += diffsign + " " + str(diff)
+		plusminus += diffsign + " " + str(diff) + "\n"
 		idx += 1
 
 	$Panel/Strokes.text = strokes

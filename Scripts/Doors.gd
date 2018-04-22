@@ -2,10 +2,19 @@ extends Sprite
 
 var opened = false
 var is_child = false
+export var color = "red"
 
 func _ready():
+	texture = load("res://Assets/door_" + color + ".png")
 	if get_parent().is_in_group("Door"):
 		is_child = true
+
+func open_silently():
+	opened = true
+	$Body/Collider.disabled = true
+	region_rect = Rect2(113, 0, 112,128)
+	$Occluder.hide()
+	toggle_children()
 
 func open():
 	if not opened:

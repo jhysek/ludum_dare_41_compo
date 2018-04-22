@@ -21,6 +21,15 @@ func _input(event):
 		$SfxStroke.play()
 		$Line.hide()
 
+	if (Input.is_action_just_pressed("ui_accept")):
+		$AnimationPlayer.play("ZoomOut")
+
+	if (Input.is_action_just_released("ui_accept")):
+		$AnimationPlayer.play_backwards("ZoomOut")
+
+
+
+
 
 func _on_Handle_input_event(viewport, event, shape_idx):
 	if (event is InputEventMouseButton && event.pressed):

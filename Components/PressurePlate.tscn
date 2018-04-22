@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/PressurePlate.gd" type="Script" id=1]
-[ext_resource path="res://Assets/pressure_plate.png" type="Texture" id=2]
+[ext_resource path="res://Assets/switch_red.png" type="Texture" id=2]
 [ext_resource path="res://Audio/switch.wav" type="AudioStream" id=3]
 
 [node name="PressurePlate" type="Area2D"]
@@ -15,8 +15,10 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+activated = false
 trigger_node = "Doors"
 is_switch = false
+color = "red"
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

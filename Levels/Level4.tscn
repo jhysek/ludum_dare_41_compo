@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/floors_iso.tres" type="TileSet" id=2]
-[ext_resource path="res://Assets/walls_iso.tres" type="TileSet" id=3]
-[ext_resource path="res://Components/PressurePlate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Components/PressurePlate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/walls_iso.tres" type="TileSet" id=4]
 [ext_resource path="res://Components/Hole.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Components/Doors.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Components/Ball.tscn" type="PackedScene" id=7]
@@ -92,7 +92,7 @@ _sections_unfolded = [ "Adjustments", "Background", "Glow" ]
 [node name="Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-hole = 1
+hole = 4
 
 [node name="Floors" type="TileMap" parent="." index="0"]
 
@@ -112,14 +112,46 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -131082, 8, 0, -131080, 8, 0, -131079, 8, 0, -131077, 8, 0, -131076, 8, 0, -131075, 8, 0, -131074, 8, 0, -131073, 8, 0, -196608, 8, 0, -196607, 8, 0, -196606, 2, 0, -65545, 11, 0, -65544, 11, 0, -65543, 11, 0, -65542, 8, 0, -65541, 8, 0, -65540, 8, 0, -65539, 8, 0, -65538, 8, 0, -65537, 8, 0, -131072, 8, 0, -131071, 8, 0, -131070, 2, 0, -10, 8, 0, -9, 11, 0, -8, 11, 0, -7, 11, 0, -6, 11, 0, -5, 11, 0, -4, 11, 0, -3, 11, 0, -2, 11, 0, -1, 11, 0, -65536, 11, 0, -65535, 8, 0, -65534, 2, 0, 65526, 8, 0, 65527, 11, 0, 65528, 11, 0, 65529, 11, 0, 65530, 8, 0, 65531, 8, 0, 65532, 8, 0, 65533, 8, 0, 65534, 8, 0, 65535, 8, 0, 0, 11, 0, 1, 8, 0, 2, 2, 0, 131062, 2, 0, 131063, 2, 0, 131064, 2, 0, 131065, 2, 0, 131066, 2, 0, 131067, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 4, 0, 131071, 8, 0, 65536, 11, 0, 65537, 8, 0, 65538, 2, 0, 196606, 8, 0, 196607, 11, 0, 131072, 11, 0, 131073, 5, 0, 131074, 2, 0, 262142, 8, 0, 262143, 11, 0, 196608, 11, 0, 196609, 5, 0, 196610, 2, 0, 327678, 8, 0, 327679, 11, 0, 262144, 11, 0, 262145, 11, 0, 262146, 2, 0, 393214, 12, 0, 393215, 11, 0, 327680, 11, 0, 327681, 11, 0, 327682, 2, 0, 458750, 12, 0, 458751, 11, 0, 393216, 11, 0, 393217, 11, 0, 393218, 2, 0, 524286, 12, 0, 524287, 11, 0, 458752, 11, 0, 458753, 11, 0, 458754, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0 )
+tile_data = PoolIntArray( -65539, 9, 0, -65538, 9, 0, -65537, 3, 0, -3, 9, 0, -2, 11, 0, -1, 3, 0, 65533, 9, 0, 65534, 11, 0, 65535, 3, 0, 131069, 9, 0, 131070, 11, 0, 131071, 3, 0, 196597, 10, 0, 196598, 10, 0, 196599, 10, 0, 196600, 10, 0, 196601, 10, 0, 196604, 9, 0, 196605, 9, 0, 196606, 12, 0, 196607, 8, 0, 131072, 3, 0, 262133, 10, 0, 262134, 10, 0, 262135, 10, 0, 262136, 10, 0, 262137, 12, 0, 262138, 12, 0, 262139, 12, 0, 262140, 9, 0, 262141, 12, 0, 262142, 12, 0, 262143, 12, 0, 196608, 9, 0, 196609, 10, 0, 196610, 10, 0, 196611, 10, 0, 196612, 3, 0, 327669, 10, 0, 327670, 10, 0, 327671, 10, 0, 327672, 10, 0, 327673, 11, 0, 327674, 11, 0, 327675, 11, 0, 327676, 11, 0, 327677, 12, 0, 327678, 12, 0, 327679, 12, 0, 262144, 12, 0, 262145, 11, 0, 262146, 11, 0, 262147, 11, 0, 262148, 3, 0, 393205, 10, 0, 393206, 10, 0, 393207, 10, 0, 393208, 10, 0, 393209, 5, 0, 393210, 3, 0, 393211, 3, 0, 393212, 9, 0, 393213, 12, 0, 393214, 12, 0, 393215, 12, 0, 327680, 2, 0, 327681, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 458741, 4, 0, 458742, 4, 0, 458743, 4, 0, 458744, 4, 0, 458745, 4, 0, 458748, 9, 0, 458749, 9, 0, 458750, 12, 0, 458751, 3, 0, 393216, 3, 0, 524285, 9, 0, 524286, 11, 0, 524287, 3, 0, 589821, 9, 0, 589822, 11, 0, 589823, 3, 0, 655357, 9, 0, 655358, 11, 0, 655359, 3, 0, 720893, 3, 0, 720894, 3, 0, 720895, 3, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="Walls" type="TileMap" parent="." index="1"]
+[node name="SwitchA" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -603.542, 436.437 )
+trigger_node = "DoorsA"
+is_switch = true
+
+[node name="SwitchB" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -163.173, 332.243 )
+trigger_node = "DoorsB"
+color = "blue"
+
+[node name="SwitchC" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( -163.173, -3.05176e-05 )
+activated = true
+trigger_node = "DoorsC"
+is_switch = true
+color = "yellow"
+
+[node name="SwitchD" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( -110.092, -55.0462 )
+trigger_node = "DoorsD"
+color = "green"
+
+[node name="SwitchD2" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( -552.427, 379.425 )
+trigger_node = "DoorsD"
+color = "green"
+
+[node name="Walls" type="TileMap" parent="." index="6"]
 
 position = Vector2( 0, -18 )
 mode = 1
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 110, 109 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -134,42 +166,41 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -131082, 9, 0, -131081, 5, 0, -131080, 5, 0, -131079, 5, 0, -131078, 5, 0, -131077, 5, 0, -131076, 5, 0, -131075, 5, 0, -131074, 5, 0, -131073, 5, 0, -196608, 5, 0, -196607, 5, 0, -196606, 5, 0, -65546, 5, 0, -131072, 10, 0, -131071, 5, 0, -131070, 5, 0, -10, 5, 0, -65535, 10, 0, -65534, 5, 0, 65526, 5, 0, 2, 5, 0, 131062, 10, 0, 131063, 5, 0, 131064, 5, 0, 131065, 5, 0, 131066, 5, 0, 131067, 5, 0, 131068, 5, 0, 131069, 5, 0, 131070, 5, 0, 131071, 11, 0, 65537, 9, 0, 65538, 7, 0, 196607, 5, 0, 131073, 5, 0, 262143, 5, 0, 196609, 5, 0, 327678, 9, 0, 327679, 8, 0, 262145, 10, 0, 262146, 11, 0, 393214, 5, 0, 327682, 5, 0, 458750, 5, 0, 393218, 5, 0, 524286, 5, 0, 458754, 5, 0, 589822, 5, 0, 589823, 5, 0, 524288, 5, 0, 524289, 5, 0, 524290, 5, 0 )
+tile_data = PoolIntArray( -65539, 5, 0, -65538, 5, 0, -65537, 5, 0, -3, 5, 0, -1, 5, 0, 65533, 5, 0, 65535, 5, 0, 131069, 5, 0, 131071, 5, 0, 196597, 2, 0, 196598, 4, 0, 196599, 2, 0, 196600, 4, 0, 196601, 2, 0, 196604, 3, 0, 196605, 3, 0, 196607, 3, 0, 131072, 3, 0, 262133, 4, 0, 262137, 5, 0, 262138, 5, 0, 262139, 5, 0, 262140, 3, 0, 196608, 3, 0, 196609, 5, 0, 196610, 5, 0, 196611, 5, 0, 196612, 5, 0, 327669, 2, 0, 262148, 5, 0, 393205, 4, 0, 393209, 5, 0, 393210, 5, 0, 393211, 5, 0, 393212, 3, 0, 327680, 3, 0, 327681, 5, 0, 327682, 5, 0, 327683, 5, 0, 327684, 5, 0, 458741, 2, 0, 458742, 4, 0, 458743, 2, 0, 458744, 4, 0, 458745, 2, 0, 458748, 3, 0, 458749, 3, 0, 458751, 3, 0, 393216, 3, 0, 524285, 5, 0, 524287, 5, 0, 589821, 5, 0, 589823, 5, 0, 655357, 5, 0, 655359, 5, 0, 720893, 5, 0, 720894, 5, 0, 720895, 5, 0 )
 _sections_unfolded = [ "Cell", "Occluder" ]
 
-[node name="PressurePlate" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Hole" parent="." index="7" instance=ExtResource( 5 )]
 
-position = Vector2( -53.6562, -112.281 )
+position = Vector2( -716.784, -231.729 )
 
-[node name="Hole" parent="." index="3" instance=ExtResource( 5 )]
-
-position = Vector2( -386.604, -448.217 )
-
-[node name="Doors" parent="." index="4" groups=[
+[node name="DoorsA" parent="." index="8" groups=[
 "Door",
 ] instance=ExtResource( 6 )]
 
-editor/display_folded = true
+position = Vector2( -602.419, -115.201 )
 
-[node name="Doors2" parent="Doors" index="2" groups=[
+[node name="DoorsB" parent="." index="9" groups=[
 "Door",
 ] instance=ExtResource( 6 )]
 
-position = Vector2( -54.5148, 54.2217 )
+position = Vector2( -552.53, -64.8326 )
+color = "blue"
 
-[node name="Doors3" parent="Doors" index="3" groups=[
+[node name="DoorsC" parent="." index="10" groups=[
 "Door",
 ] instance=ExtResource( 6 )]
 
-show_behind_parent = true
-position = Vector2( 56.3528, -56.0699 )
-_sections_unfolded = [ "Region", "Visibility" ]
+position = Vector2( -495.925, -10.6262 )
+color = "yellow"
 
-[node name="Ball" parent="." index="5" instance=ExtResource( 7 )]
+[node name="DoorsD" parent="." index="11" groups=[
+"Door",
+] instance=ExtResource( 6 )]
 
-position = Vector2( -354.209, 366.839 )
+position = Vector2( -497.891, 319.651 )
+color = "green"
 
-[node name="Cover" type="TileMap" parent="." index="6"]
+[node name="Cover" type="TileMap" parent="." index="12"]
 
 position = Vector2( 0, -18 )
 mode = 1
@@ -188,21 +219,26 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 131068, 12, 0, 131069, 12, 0, 131070, 12, 0 )
+tile_data = PoolIntArray( 393209, 5, 0, 393210, 5, 0, 393211, 5, 0, 393212, 3, 0, 458745, 2, 0, 458748, 3, 0, 458749, 3, 0, 524285, 5, 0, 524287, 5, 0, 589821, 5, 0, 589823, 5, 0, 655357, 5, 0, 655359, 5, 0, 720893, 5, 0, 720894, 5, 0, 720895, 5, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="Flag" type="Sprite" parent="." index="7"]
+[node name="Ball" parent="." index="13" instance=ExtResource( 7 )]
 
-position = Vector2( -337.092, -515.018 )
+position = Vector2( -325.706, 157.819 )
+
+[node name="Flag" type="Sprite" parent="." index="14"]
+
+position = Vector2( -667.932, -292.209 )
 scale = Vector2( 0.409988, 0.471427 )
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." index="8"]
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="15"]
 
+visible = false
 color = Color( 0.542969, 0.542969, 0.542969, 1 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="9"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="16"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -231,7 +267,7 @@ max_lines_visible = -1
 
 [node name="UI" parent="CanvasLayer" index="1" instance=ExtResource( 9 )]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="10"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="17"]
 
 environment = SubResource( 1 )
 
