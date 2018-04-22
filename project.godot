@@ -14,6 +14,10 @@ config/name="PuzzleGolf"
 run/main_scene="res://Levels/Level1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Stats="*res://Scripts/Stats.gd"
+
 [rendering]
 
 environment/default_clear_color=Color( 0, 0, 0, 1 )

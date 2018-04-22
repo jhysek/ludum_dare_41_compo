@@ -3,15 +3,30 @@ extends Control
 onready var game = get_node("/root/Level")
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	var parstr = ""
+	for par in game.pars:
+		parstr += str(par) + "\n"
+	$Panel/Pars.text = parstr
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func update_stats():
+	var strokes = ""
+	var plusminus = ""
+	var idx = 0
 
+	for stroke in Stats.strokes:
+		if stroke == -1:
+			break
 
-func _on_Button_pressed():
-	game.to_next_level()
+		var diff = stroke - game.pars[idx]
+		var diffsign = ""
+		if diff > 0:
+			diffsign = "+"
+		if diff < 0:
+			diffsign = "-"
+
+		strokes += str(stroke) + "\n"
+		plusminus += diffsign + " " + str(diff)
+		idx += 1
+
+	$Panel/Strokes.text = strokes
+	$Panel/Diffs.text = plusminus
