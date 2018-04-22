@@ -93,6 +93,7 @@ _sections_unfolded = [ "Adjustments", "Background", "Glow" ]
 [node name="Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+hole = 1
 
 [node name="Floors" type="TileMap" parent="." index="0"]
 
@@ -149,7 +150,10 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 4 )
+activated = false
 trigger_node = "Doors"
+is_switch = false
+color = "red"
 
 [node name="Sprite" type="Sprite" parent="PressurePlate" index="0"]
 

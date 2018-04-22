@@ -3,7 +3,7 @@ extends Node2D
 var strokes = 0
 export var hole = 1
 var pars = [2, 3, 5, 6, 5, 8]
-var total_holes = 5
+var total_holes = 6
 
 func _ready():
 	$CanvasLayer/UI/Hole.text = "Hole: " + str(hole)

@@ -1,0 +1,284 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://Assets/floors_iso.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/walls_iso.tres" type="TileSet" id=3]
+[ext_resource path="res://Components/Hole.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Components/PressurePlate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Components/Doors.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Components/Ball.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/flag.png" type="Texture" id=8]
+[ext_resource path="res://Components/UI.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Environment" id=1]
+
+background_mode = 4
+background_sky_custom_fov = 0.0
+background_color = Color( 0, 0, 0, 1 )
+background_energy = 1.0
+background_canvas_max_layer = 0
+ambient_light_color = Color( 0, 0, 0, 1 )
+ambient_light_energy = 1.0
+ambient_light_sky_contribution = 1.0
+fog_enabled = false
+fog_color = Color( 0.5, 0.6, 0.7, 1 )
+fog_sun_color = Color( 1, 0.9, 0.7, 1 )
+fog_sun_amount = 0.0
+fog_depth_enabled = true
+fog_depth_begin = 10.0
+fog_depth_curve = 1.0
+fog_transmit_enabled = false
+fog_transmit_curve = 1.0
+fog_height_enabled = false
+fog_height_min = 0.0
+fog_height_max = 100.0
+fog_height_curve = 1.0
+tonemap_mode = 0
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+auto_exposure_enabled = false
+auto_exposure_scale = 0.4
+auto_exposure_min_luma = 0.05
+auto_exposure_max_luma = 8.0
+auto_exposure_speed = 0.5
+ss_reflections_enabled = false
+ss_reflections_max_steps = 64
+ss_reflections_fade_in = 0.15
+ss_reflections_fade_out = 2.0
+ss_reflections_depth_tolerance = 0.2
+ss_reflections_roughness = true
+ssao_enabled = false
+ssao_radius = 1.0
+ssao_intensity = 1.0
+ssao_radius2 = 0.0
+ssao_intensity2 = 1.0
+ssao_bias = 0.01
+ssao_light_affect = 0.0
+ssao_color = Color( 0, 0, 0, 1 )
+ssao_quality = 0
+ssao_blur = 3
+ssao_edge_sharpness = 4.0
+dof_blur_far_enabled = false
+dof_blur_far_distance = 10.0
+dof_blur_far_transition = 5.0
+dof_blur_far_amount = 0.1
+dof_blur_far_quality = 1
+dof_blur_near_enabled = false
+dof_blur_near_distance = 2.0
+dof_blur_near_transition = 1.0
+dof_blur_near_amount = 0.1
+dof_blur_near_quality = 1
+glow_enabled = false
+glow_levels/1 = false
+glow_levels/2 = false
+glow_levels/3 = true
+glow_levels/4 = false
+glow_levels/5 = true
+glow_levels/6 = false
+glow_levels/7 = false
+glow_intensity = 0.8
+glow_strength = 1.0
+glow_bloom = 0.0
+glow_blend_mode = 2
+glow_hdr_threshold = 1.0
+glow_hdr_scale = 2.0
+glow_bicubic_upscale = false
+adjustment_enabled = true
+adjustment_brightness = 1.0
+adjustment_contrast = 1.2
+adjustment_saturation = 0.7
+_sections_unfolded = [ "Adjustments", "Background", "Glow" ]
+
+[node name="Level" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+hole = 6
+
+[node name="Floors" type="TileMap" parent="." index="0"]
+
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 110, 110 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 262142, 12, 0, 262143, 11, 0, 196608, 12, 0, 196609, 11, 0, 196610, 12, 0, 196611, 11, 0, 196612, 12, 0, 196613, 2, 0, 327678, 12, 0, 327679, 8, 0, 262144, 8, 0, 262145, 8, 0, 262146, 8, 0, 262147, 8, 0, 262148, 8, 0, 262149, 5, 0, 393214, 12, 0, 393215, 8, 0, 327680, 8, 0, 327681, 8, 0, 327682, 8, 0, 327683, 8, 0, 327684, 8, 0, 327685, 2, 0, 458750, 12, 0, 458751, 8, 0, 393216, 8, 0, 393217, 8, 0, 393218, 8, 0, 393219, 8, 0, 393220, 8, 0, 393221, 2, 0, 524286, 12, 0, 524287, 8, 0, 458752, 8, 0, 458753, 8, 0, 458754, 8, 0, 458755, 8, 0, 458756, 8, 0, 458757, 2, 0, 589822, 12, 0, 589823, 8, 0, 524288, 8, 0, 524289, 8, 0, 524290, 8, 0, 524291, 8, 0, 524292, 8, 0, 524293, 2, 0, 524294, 8, 0, 524295, 8, 0, 524296, 8, 0, 524297, 2, 0, 655358, 12, 0, 655359, 8, 0, 589824, 8, 0, 589825, 8, 0, 589826, 8, 0, 589827, 8, 0, 589828, 8, 0, 589829, 2, 0, 589830, 8, 0, 589831, 8, 0, 589832, 8, 0, 589833, 2, 0, 720894, 2, 0, 720895, 2, 0, 655360, 2, 0, 655361, 2, 0, 655362, 2, 0, 655363, 2, 0, 655364, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 720897, 8, 0, 720898, 8, 0, 720899, 2, 0, 786433, 8, 0, 786434, 8, 0, 786435, 2, 0, 851968, 8, 0, 851969, 8, 0, 851970, 8, 0, 851971, 8, 0, 851972, 8, 0, 917504, 8, 0, 917505, 8, 0, 917506, 8, 0, 917507, 8, 0, 917508, 8, 0, 983040, 8, 0, 983041, 8, 0, 983042, 8, 0, 983043, 10, 0, 983044, 8, 0, 1048576, 8, 0, 1048577, 8, 0, 1048578, 8, 0, 1048579, 8, 0, 1048580, 8, 0, 1114112, 8, 0, 1114113, 10, 0, 1114114, 8, 0, 1114115, 10, 0, 1114116, 8, 0, 1114117, 2, 0, 1245183, 8, 0, 1179648, 10, 0, 1179649, 8, 0, 1179650, 10, 0, 1179651, 8, 0, 1179652, 10, 0, 1179653, 4, 0, 1310719, 8, 0, 1245184, 8, 0, 1245185, 10, 0, 1245186, 8, 0, 1245187, 10, 0, 1245188, 2, 0, 1245189, 4, 0, 1376255, 8, 0, 1310720, 10, 0, 1310721, 8, 0, 1310722, 10, 0, 1310723, 10, 0, 1310724, 10, 0, 1310725, 4, 0, 1441791, 10, 0, 1376256, 10, 0, 1376257, 10, 0, 1376258, 10, 0, 1376259, 10, 0, 1376260, 10, 0, 1376261, 4, 0, 1507327, 10, 0, 1441792, 10, 0, 1441793, 10, 0, 1441794, 10, 0, 1441795, 10, 0, 1441796, 10, 0, 1441797, 4, 0, 1572863, 10, 0, 1507328, 10, 0, 1507329, 10, 0, 1507330, 10, 0, 1507331, 10, 0, 1507332, 10, 0, 1507333, 4, 0, 1638399, 4, 0, 1572864, 4, 0, 1572865, 4, 0, 1572866, 4, 0, 1572867, 4, 0, 1572868, 4, 0, 1572869, 4, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Walls" type="TileMap" parent="." index="1"]
+
+position = Vector2( 0.000244141, -8.99988 )
+mode = 1
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 110, 109 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 262142, 5, 0, 262143, 5, 0, 196608, 5, 0, 196609, 5, 0, 196610, 5, 0, 196611, 5, 0, 196612, 5, 0, 196613, 5, 0, 327678, 5, 0, 327679, 8, 0, 262148, 10, 0, 262149, 5, 0, 393214, 5, 0, 327681, 5, 0, 327682, 5, 0, 327685, 5, 0, 458750, 5, 0, 458751, 11, 0, 393221, 5, 0, 524286, 5, 0, 524287, 7, 0, 458756, 9, 0, 458757, 5, 0, 458758, 5, 0, 458759, 5, 0, 458760, 5, 0, 458761, 11, 0, 589822, 5, 0, 524289, 5, 0, 524290, 5, 0, 524292, 5, 0, 524293, 5, 0, 524294, 7, 0, 524297, 5, 0, 655358, 5, 0, 655359, 11, 0, 589833, 5, 0, 720894, 5, 0, 720895, 5, 0, 655360, 5, 0, 655361, 5, 0, 655363, 5, 0, 655364, 5, 0, 655365, 5, 0, 655366, 5, 0, 655368, 5, 0, 655369, 5, 0, 720897, 5, 0, 720899, 5, 0, 786432, 9, 0, 786433, 5, 0, 786435, 5, 0, 786436, 11, 0, 851968, 2, 0, 851969, 8, 0, 851971, 10, 0, 851972, 2, 0, 917504, 2, 0, 917508, 2, 0, 983040, 2, 0, 983044, 2, 0, 1048576, 2, 0, 1048580, 2, 0, 1179647, 2, 0, 1114112, 2, 0, 1114116, 2, 0, 1114117, 2, 0, 1245183, 2, 0, 1179653, 4, 0, 1310719, 2, 0, 1245189, 4, 0, 1376255, 2, 0, 1310722, 11, 0, 1310724, 10, 0, 1310725, 4, 0, 1441791, 4, 0, 1376261, 4, 0, 1507327, 4, 0, 1441797, 4, 0, 1572863, 4, 0, 1507328, 11, 0, 1507332, 9, 0, 1507333, 4, 0, 1638399, 4, 0, 1572864, 4, 0, 1572865, 4, 0, 1572866, 4, 0, 1572867, 4, 0, 1572868, 4, 0, 1572869, 4, 0 )
+_sections_unfolded = [ "Cell", "Occluder", "Transform" ]
+
+[node name="Hole" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( -1127.55, 1335.6 )
+
+[node name="PressurePlate" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( -112.386, 383.704 )
+is_switch = true
+color = "yellow"
+
+[node name="ButtonGreen" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( -51.7782, 974.924 )
+trigger_node = "DoorsGreen"
+is_switch = true
+color = "green"
+
+[node name="PressurePlate2" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( -437.723, 600.446 )
+scale = Vector2( 0.921102, 0.927107 )
+trigger_node = "DoorsRed"
+
+[node name="PressurePlate3" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( -217.758, 821.994 )
+scale = Vector2( 0.921102, 0.927107 )
+trigger_node = "DoorsRed"
+
+[node name="Doors" parent="." index="7" instance=ExtResource( 6 )]
+
+position = Vector2( -437.506, 707.833 )
+color = "yellow"
+
+[node name="DoorsGreen" parent="." index="8" instance=ExtResource( 6 )]
+
+position = Vector2( -545.735, 816.062 )
+color = "green"
+
+[node name="DoorsRed" parent="." index="9" instance=ExtResource( 6 )]
+
+position = Vector2( -273.135, 762.252 )
+
+[node name="Ball" parent="." index="10" instance=ExtResource( 7 )]
+
+position = Vector2( -240.378, 461.683 )
+
+[node name="Cover" type="TileMap" parent="." index="11"]
+
+position = Vector2( 0, -3 )
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 110, 108 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 327682, 5, 0, 655363, 5, 0, 655364, 5, 0, 655365, 5, 0, 655366, 5, 0, 655367, 5, 0, 655368, 5, 0, 655369, 5, 0, 720899, 12, 0, 786435, 12, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Flag" type="Sprite" parent="." index="12"]
+
+position = Vector2( -1078.19, 1273.43 )
+scale = Vector2( 0.409988, 0.471427 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="13"]
+
+color = Color( 0.542969, 0.542969, 0.542969, 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="14"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Label" type="Label" parent="CanvasLayer" index="0"]
+
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -14.0
+margin_right = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="UI" parent="CanvasLayer" index="1" instance=ExtResource( 9 )]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="15"]
+
+environment = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="16"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+position = Vector2( 0.846283, -2.53885 )
+build_mode = 0
+polygon = PoolVector2Array( -354.298, 231, -165.577, 231.846, -263.746, 175.146 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="17"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -546.467, 424.373, -547.32, 567.541, -567.772, 471.244 )
+
+
