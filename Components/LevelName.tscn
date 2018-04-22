@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/BEBAS___.otf" type="DynamicFontData" id=1]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 
 size = 40
 use_mipmaps = true
@@ -27,7 +27,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.971436, 0.542969, 1 )
 text = "Pressure    plate"
 percent_visible = 1.0

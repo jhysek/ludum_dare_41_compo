@@ -130,7 +130,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Menu" type="Node2D"]
+[node name="Menu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -239,9 +239,9 @@ anchor_top = 0.0
 anchor_right = 0.5
 anchor_bottom = 0.0
 margin_left = -193.0
-margin_top = 240.0
+margin_top = 291.0
 margin_right = 214.0
-margin_bottom = 325.0
+margin_bottom = 376.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2

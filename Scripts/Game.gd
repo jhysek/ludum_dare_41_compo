@@ -10,9 +10,12 @@ func _ready():
 	$CanvasLayer/UI/Par.text = "Par:    " + str(pars[hole - 1])
 	set_process_input(true)
 
+func restart_level():
+	get_tree().change_scene("res://Levels/Level" + str(hole) + ".tscn")
+
 func _input(event):
 	if Input.is_key_pressed(KEY_R):
-		get_tree().change_scene("res://Levels/Level" + str(hole) + ".tscn")
+		restart_level()
 
 func add_stroke():
 	strokes += 1
@@ -21,7 +24,6 @@ func add_stroke():
 func finished():
 	Stats.strokes[hole - 1] = strokes
 	$CanvasLayer/UI.update_stats()
-	print("hole: " + str(hole))
 	if hole == total_holes:
 		print("Game finishe")
 		$CanvasLayer/UI/AnimationPlayer.play("GameFinished")
@@ -32,3 +34,9 @@ func finished():
 func to_next_level():
 	if hole < total_holes:
 		get_tree().change_scene("res://Levels/Level" + str(hole + 1) + ".tscn")
+
+func _on_Boundaries_body_entered(body):
+	if body.name == "Ball":
+		restart_level()
+
+	pass # replace with function body

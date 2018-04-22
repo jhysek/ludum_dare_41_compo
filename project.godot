@@ -12,11 +12,18 @@ config_version=3
 
 config/name="PuzzleGolf"
 run/main_scene="res://Scenes/Menu.tscn"
+run/disable_stdout=true
 config/icon="res://icon.png"
 
 [autoload]
 
 Stats="*res://Scripts/Stats.gd"
+
+[display]
+
+window/size/width=1200
+window/size/height=760
+window/size/fullscreen=true
 
 [input]
 

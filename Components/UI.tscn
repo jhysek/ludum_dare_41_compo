@@ -6,7 +6,7 @@
 [ext_resource path="res://Scripts/PanelHoleFinished.gd" type="Script" id=4]
 [ext_resource path="res://Assets/grid.png" type="Texture" id=5]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=11]
 
 size = 27
 use_mipmaps = true
@@ -14,7 +14,7 @@ use_filter = true
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=12]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -42,7 +42,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=13]
 
 size = 30
 use_mipmaps = true
@@ -78,7 +78,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=14]
 
 size = 20
 use_mipmaps = true
@@ -86,7 +86,7 @@ use_filter = true
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=15]
 
 size = 21
 use_mipmaps = true
@@ -94,7 +94,7 @@ use_filter = true
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=16]
 
 size = 22
 use_mipmaps = true
@@ -102,7 +102,7 @@ use_filter = true
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=17]
 
 length = 1.0
 loop = false
@@ -120,7 +120,7 @@ tracks/0/keys = {
 "values": [ Vector2( 366, -600 ), Vector2( 366, 120 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=18]
 
 length = 1.0
 loop = false
@@ -182,7 +182,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 11 )
 text = "HOLE: 1"
 percent_visible = 1.0
 lines_skipped = 0
@@ -205,7 +205,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 11 )
 text = "PAR:    2"
 percent_visible = 1.0
 lines_skipped = 0
@@ -228,7 +228,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 11 )
 text = "STROKES: 0"
 percent_visible = 1.0
 lines_skipped = 0
@@ -254,7 +254,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 12 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "custom_styles" ]
 
@@ -274,7 +274,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Game    finished!"
 align = 1
@@ -301,7 +301,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/normal = SubResource( 10 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 14 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -332,7 +332,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1
 2
@@ -364,7 +364,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "2
 4
@@ -396,7 +396,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "2
 4
@@ -428,7 +428,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "2
 4
@@ -460,7 +460,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "hole           par         strks        +/-"
 uppercase = true
@@ -485,7 +485,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 0.0655212, 0.441406, 0, 1 )
 text = "TOTAL           par        "
 uppercase = true
@@ -510,7 +510,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 0.0655212, 0.441406, 0, 1 )
 text = "0"
 align = 1
@@ -536,7 +536,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 0.0655212, 0.441406, 0, 1 )
 text = "0"
 align = 1
@@ -555,8 +555,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Finished = SubResource( 12 )
-anims/GameFinished = SubResource( 9 )
+anims/Finished = SubResource( 17 )
+anims/GameFinished = SubResource( 18 )
 blend_times = [  ]
 
 [connection signal="pressed" from="PanelGameFinished/Button" to="." method="back_to_menu"]

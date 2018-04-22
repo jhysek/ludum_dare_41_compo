@@ -220,7 +220,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 393209, 5, 0, 393210, 5, 0, 393211, 5, 0, 393212, 3, 0, 458745, 2, 0, 458748, 3, 0, 458749, 3, 0, 524285, 5, 0, 524287, 5, 0, 589821, 5, 0, 589823, 5, 0, 655357, 5, 0, 655359, 5, 0, 720893, 5, 0, 720894, 5, 0, 720895, 5, 0 )
+tile_data = PoolIntArray( 393209, 5, 0, 393210, 5, 0, 393211, 12, 0, 458745, 2, 0, 524287, 5, 0, 589823, 5, 0, 655359, 5, 0, 720894, 5, 0, 720895, 5, 0 )
 _sections_unfolded = [ "Cell" ]
 
 [node name="Ball" parent="." index="13" instance=ExtResource( 7 )]
@@ -273,11 +273,30 @@ environment = SubResource( 1 )
 
 [node name="Title" parent="." index="18" instance=ExtResource( 10 )]
 
-margin_left = -310.0
-margin_top = -121.0
-margin_right = -27.0
-margin_bottom = -68.0
+margin_left = -748.0
+margin_top = 296.0
+margin_right = -465.0
+margin_bottom = 349.0
 custom_colors/font_color = Color( 0.411682, 0.649233, 0.742188, 1 )
-text = "Lockdownn"
+text = "Lockdown"
+
+[node name="Boundaries" type="Area2D" parent="." index="19"]
+
+position = Vector2( -224.262, -8.97046 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundaries" index="0"]
+
+position = Vector2( 58.3083, -40.3672 )
+build_mode = 0
+polygon = PoolVector2Array( -383.493, 888.701, 762.041, 432.634, -371.344, -848.707, -833.032, -423.467, -893.017, -110.081, -857.332, 317.665, -353.119, 803.653, -541.439, 973.749, -1610.61, -180.473, -304.521, -1405.16, 1300.27, 387.782, -272.931, 1242.26 )
+
+[connection signal="body_entered" from="Boundaries" to="." method="_on_Boundaries_body_entered"]
 
 

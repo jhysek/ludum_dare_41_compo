@@ -1,0 +1,18 @@
+[gd_scene format=2]
+
+[node name="Boundaries" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -383.493, 888.701, 533.809, -28.6017, -371.344, -848.707, -833.032, -423.467, -504.99, -95.425, -857.332, 317.665, -353.119, 803.653, -541.439, 973.749, -1610.61, -180.473, -304.521, -1405.16, 1025.87, 119.625, -272.931, 1242.26 )
+
+
