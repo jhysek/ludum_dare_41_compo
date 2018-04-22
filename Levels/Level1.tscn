@@ -204,6 +204,7 @@ color = Color( 0.542969, 0.542969, 0.542969, 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="9"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -234,5 +235,20 @@ max_lines_visible = -1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="10"]
 
 environment = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="11"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 109.892, -126.028, 109.892, 133.037, 237.017, 2.05965 )
 
 

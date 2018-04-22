@@ -21,7 +21,13 @@ func add_stroke():
 func finished():
 	Stats.strokes[hole - 1] = strokes
 	$CanvasLayer/UI.update_stats()
-	$CanvasLayer/UI/AnimationPlayer.play("Finished")
+	print("hole: " + str(hole))
+	if hole == total_holes:
+		print("Game finishe")
+		$CanvasLayer/UI/AnimationPlayer.play("GameFinished")
+	else:
+		print("HOle finishe")
+		$CanvasLayer/UI/AnimationPlayer.play("Finished")
 
 func to_next_level():
 	if hole < total_holes:

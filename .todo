@@ -3,10 +3,16 @@
     <note priority="veryhigh" time="1524355407" done="1524382491">
         aiming
     </note>
-    <note priority="medium" time="1524355397">
+    <note priority="medium" time="1524355397" done="1524403622">
         switch/pressure plate select correct picture
     </note>
     <note priority="medium" time="1524383816">
         align light occluder with collision boxes
+    </note>
+    <note priority="medium" time="1524403655">
+        audio: bounce, game finished music, menu click
+    </note>
+    <note priority="medium" time="1524403663">
+        menu screen background
     </note>
 </todo>
